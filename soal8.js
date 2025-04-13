@@ -8,15 +8,11 @@ let produkArray = [
 ];
 
 function rekomendasiProduk(namaPelanggan, minatPelanggan) {
-  // Filter produk berdasarkan kategori minat pelanggan
-let produkSesuaiMinat = produkArray.filter((produk) =>
-    minatPelanggan.includes(produk.Kategori)
-);
 
-  // Urutkan produk berdasarkan harga dari yang paling murah
-produkSesuaiMinat.sort((a, b) => a.Harga - b.Harga);
+  let produkSesuaiMinat = produkArray.filter((produk) =>
+    minatPelanggan.includes(produk.Kategori));
 
-  // Ambil produk paling murah atau tampilkan pesan jika tidak ada produk yang sesuai
+
 if (produkSesuaiMinat.length > 0) {
     console.log(`${namaPelanggan}, berikut rekomendasi produk untuk Anda:`);
     produkSesuaiMinat.forEach((produk) => {
@@ -24,13 +20,12 @@ if (produkSesuaiMinat.length > 0) {
     });
 } else {
     console.log(
-    `${namaPelanggan}, maaf tidak ada produk yang sesuai dengan minat Anda.`
+    namaPelanggan, "maaf tidak ada produk yang sesuai dengan minat Anda."
     );
 }
 }
 
-// Contoh penggunaan
 let namaPelanggan = "Rina";
-let minatPelanggan = ["elektronik", "musik", "fashion"];
+let minatPelanggan = ["elektronik", "musik"];
 
 rekomendasiProduk(namaPelanggan, minatPelanggan);

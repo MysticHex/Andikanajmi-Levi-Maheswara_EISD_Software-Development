@@ -16,12 +16,11 @@ function hitungKombinasiUsername(nama, maxPanjang = 6) {
     };
 }
 
-// Contoh penggunaan
 const namaLengkap = "Naip Lovyu";
 const result = hitungKombinasiUsername(namaLengkap);
 
 console.log(`Total kombinasi username yang mungkin: ${result.totalKombinasi}`);
 console.log("Daftar kombinasi username:");
 result.daftarKombinasi.forEach((username, index) => {
-    console.log(`${index + 1}. ${username}`);
+    console.log(index + 1, username);
 });
